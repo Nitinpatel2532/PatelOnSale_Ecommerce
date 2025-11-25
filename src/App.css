@@ -1,0 +1,344 @@
+
+.product_title{
+    text-align: center;
+    margin-top:10px;
+    h2{
+        font-size: 25px;
+        font-family: monospace;
+        font-style: oblique;
+        font-weight: bolder;
+        text-decoration: underline;
+        text-decoration-style: double;
+        text-decoration-color: red;
+    }
+}
+.allproducts{
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    overflow-x: auto;
+    scrollbar-width: none;
+    text-align: center;
+    background-color: silver;
+    padding: 10px;
+    gap: 10px;
+
+    .pro{
+        border-radius: 15px;
+        
+        
+        img{
+            width: 130px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 10px;
+            
+        }
+    }
+}
+.pro:hover{
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+/* mens products */
+.mens_product_title{
+    margin-top: 5px;
+    h4{
+        margin: 15px;
+    }
+}
+.mens_pro{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 3px 2px 5px black;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 10px;
+
+    .menpro{
+        gap: 10px;
+        /* transition:transform 0.3s ease,opacity 0.3s ease; */
+        
+        img{
+            width: 150px;
+            aspect-ratio: 1;
+            transition:trasform 0.3s ease,opacity 0.3s ease ;
+            
+        }
+
+    }
+}
+.menpro:hover{
+    /* border: 1px solid black; */
+    box-shadow: 0 8px 20px rgba(0,0,0.15);
+
+        img{
+            
+         transform: scale(1.05);
+        opacity: 0.8;
+            
+        }
+    
+}
+
+
+/* promotion container */
+.pmain{
+    text-align: center;
+    /* margin: 10px; */
+    .ppchild{
+        margin: 12px;
+        padding: 12px;
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 4px 6px 8px black;
+        background-color: rgb(200, 219, 220);
+        /* column-gap: 10px; */
+        row-gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .pchild{
+        /* display: flex; */
+        border:1px solid black;
+        padding: 15px;
+        box-sizing: border-box;
+        box-shadow: 4px 6px 8px black;
+        background-color: white;
+        img{
+            width: 150px;
+            object-fit: cover;
+            aspect-ratio: 1;
+        }
+        button{
+            border-style: none;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+        }
+    }
+}
+.pchild:hover{
+    background-color: black;
+    color: white;
+}
+
+/* product detail page */
+.pdetail{
+    text-align: center;
+    margin: 15px;
+
+    .pdet{
+        border: 1px solid black;
+        box-shadow: 2px 3px 4px black;
+        padding: 15px;
+    }
+}
+
+/* cart page */
+.itemmain{
+    /* display: flex; */
+
+    .cartdiv{
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        img{
+            width: 200px;
+            height: 200px;
+          
+        }
+    }
+
+    .cartdetail{
+        font-size: 10px;
+    }
+    
+}
+.cartbutton{
+   button{
+    background-color: blueviolet;
+    margin: 5px;
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+   }
+   button:hover{
+    background-color: blue;
+   }
+}
+
+.totalbtn{
+     button{
+    background-color: blueviolet;
+    margin: 5px;
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+   }
+   button:hover{
+    background-color: blue;
+   }
+}
+
+
+
+/* login page / address page */
+
+.formpage{
+     display: flex;
+     padding: 15px;
+        justify-content: center;
+        background-image: url("../src/assets/image/login2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:10px;
+        
+
+    .form{
+        /* border: 1px solid black; */
+        font-size: 12px;
+        padding: 15px;
+        box-shadow: 2px 3px 4px black;
+        border-radius: 10px;
+
+        .btn{
+            padding: 5px;
+            margin: 0;
+            border-style: none;
+            background-color: rgb(34, 65, 200);
+            color: white;
+            font-size: 12px;
+        }
+        .btn:hover{
+    background-color: red;
+    border-radius: 1px;
+}
+       
+    }
+}
+
+
+/* purchase button to send data at database */
+.purchasebtn{
+    margin-top: 5px;
+    text-align: center;
+    button{
+        
+        background-color: rgb(110, 110, 243);
+        border-style: none;
+        border-radius: 5px;
+        color: white;
+        padding: 5px;
+    }
+    button:hover{
+        background-color: blue;
+    }
+}
+
+/* admin page */
+.admincontainer{
+    margin: 15px;
+    /* width: 100%; */
+    background-image: url("../src/assets/image/login1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    /* height: 50vh; */
+    padding: 30px;
+    /* text-align: center; */
+   
+    .admin{
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 15px;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        h4{
+            text-align: center;
+            font-family: fantasy;
+        }
+        .btn{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+            
+            button{
+                border-style: none;
+                border-radius: 5px;
+                background-color: blueviolet;
+                color: white;
+                padding: 5px;
+                width: 100px;
+                transition:  all 0.4s ease;
+                
+            }
+           
+        }
+        button:hover{
+            background-color: blue;
+            width: 100%;
+        }
+       
+
+    }
+}
+
+
+/* admin page for all products with information */
+
+.datacontainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* border: 1px solid ; */
+    margin-top:15px;
+    margin: 10px;
+    box-shadow: 2px 3px 5px black;
+    /* text-align: center; */
+    padding: 5px;
+    gap: 5px;
+
+    .data{
+        border: 1px solid;
+        padding: 3px;
+    
+     .btn{
+     button{
+    background-color: blueviolet;
+    margin: 5px;
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+   }
+   button:hover{
+    background-color: blue;
+    border: 1px solid black;
+   }
+}
+    }
+}
+
+
+/* data btn */
+
+.databtn{
+     button{
+    background-color: blueviolet;
+    margin: 5px;
+    border-style: none;
+    color: white;
+    border-radius: 5px;
+   }
+   button:hover{
+    background-color: blue;
+    border: 1px solid black;
+   }
+}

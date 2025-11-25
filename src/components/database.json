@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": "7633",
+      "shippingInfo": {
+        "name": "nitin patel",
+        "email": "Nitin@gmail.com",
+        "address": "AYODHYA BYPASS ROAD",
+        "district": "hbd",
+        "state": "madhya pradesh",
+        "pincode": "462041",
+        "phone": "8719966634",
+        "payment": "cash",
+        "alternate": "9479526999"
+      },
+      "buyNowItem": {
+        "id": 8,
+        "image": "/src/assets/image/shoe.avif",
+        "type": "Ankle Chelsea Boots",
+        "price": 890,
+        "description": "Premium suede Chelsea boots with elastic side panels and durable rubber soles. Great for smart-casual looks.",
+        "quantity": 2,
+        "selectedSize": "L",
+        "selectedColor": "Black",
+        "totalPrice": 1780
+      },
+      "orderDate": "2025-05-10T11:24:14.121Z"
+    },
+    {
+      "id": "25d4",
+      "shippingInfo": {
+        "name": "nitin patel",
+        "email": "Nitin@gmail.com",
+        "address": "AYODHYA BYPASS ROAD",
+        "district": "narmdapuram",
+        "state": "madhya pradesh",
+        "pincode": "462041",
+        "phone": "8827149581",
+        "payment": "online",
+        "alternate": "6523896587"
+      },
+      "buyNowItem": {
+        "id": 5,
+        "image": "/src/assets/image/tshirt.avif",
+        "type": "Graphic Print T-Shirt",
+        "price": 249,
+        "description": "Soft cotton t-shirt with bold graphic prints. Breathable fabric perfect for daily wear and relaxed weekends.",
+        "quantity": 2,
+        "selectedSize": "M",
+        "selectedColor": "Blue",
+        "totalPrice": 498
+      },
+      "orderDate": "2025-05-10T11:40:00.649Z"
+    },
+    {
+      "id": "942a",
+      "shippingInfo": {
+        "name": "nitin patel",
+        "email": "Nitin@gmail.com",
+        "address": "AYODHYA BYPASS ROAD",
+        "district": "narmdapuram",
+        "state": "madhya pradesh",
+        "pincode": "462041",
+        "phone": "8719966634",
+        "payment": "cash",
+        "alternate": "9874563215"
+      },
+      "buyNowItem": {
+        "id": 8,
+        "image": "/src/assets/image/shoe.avif",
+        "type": "Ankle Chelsea Boots",
+        "price": 890,
+        "description": "Premium suede Chelsea boots with elastic side panels and durable rubber soles. Great for smart-casual looks.",
+        "quantity": 2,
+        "selectedSize": "L",
+        "selectedColor": "Black",
+        "totalPrice": 1780
+      },
+      "orderDate": "2025-05-10T12:08:04.814Z"
+    }
+  ]
+}

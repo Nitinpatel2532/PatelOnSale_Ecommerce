@@ -1,0 +1,71 @@
+      {/* form section */}
+            {/* {
+                form && (
+                    <>
+                        <h1>Edit form</h1>
+                        <form action="" onSubmit={handleupdate}>
+
+                            <label htmlFor="">name:</label>
+                            <input type="text" value={editdata.shippingInfo.name} name='name' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">email:</label>
+                            <input type="text" value={editdata.shippingInfo.email} name='email' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">address:</label>
+                            <input type="text" value={editdata.shippingInfo.address} name='address' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">district:</label>
+                            <input type="text" value={editdata.shippingInfo.district} name='district' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">state:</label>
+                            <input type="text" value={editdata.shippingInfo.state} name='state' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">pincode:</label>
+                            <input type="text" value={editdata.shippingInfo.pincode} name='pincode' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">phone:</label>
+                            <input type="text" value={editdata.shippingInfo.phone} name='phone' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">payment:</label>
+                            <input type="text" value={editdata.shippingInfo.payment} name='payment' onChange={handleinput} /> <br /><br />
+
+                            <label htmlFor="">alternate:</label>
+                            <input type="text" value={editdata.shippingInfo.alternate} name='alternate' onChange={handleinput} /> <br /><br />
+
+                            <input type="submit" value={"Update"} />
+
+                        </form>
+
+                    </> 
+                )
+            }
+            // */}
+
+
+
+            
+    // to update data by admin
+
+    // function handleinput(e) {
+    //     const { name, value } = e.target
+    //     Seteditdata({ ...editdata, [name]: value })
+
+
+    // }
+
+    // on submission
+
+    // function handleupdate(e) {
+    //     e.preventDefault()
+    //     axios.put(`http://localhost:3000/users/${editdata.id}`,editdata)
+    //         .then(update => alert("updated succesfully"))
+
+    // }
+
+
+    
+    function dataDelete(id) {
+        axios.delete(`http://localhost:3000/users/${id}`)
+            .then(del => alert("📄 Entry Removed Successfully"))
+
+    }
