@@ -9,29 +9,31 @@ const Admin_page = () => {
     }, []);
 
     const fetchData = () => {
-        axios.get('http://localhost:3000/users')
-            .then(data => setUsers(data.data))
+        axios
+            .get('http://localhost:8000/api/orders/')
+            .then(res => setUsers(res.data))
             .catch(err => console.error(err));
     };
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this order?")) {
-            axios.delete(`http://localhost:3000/users/${id}`)
-                .then(() => {
-                    fetchData();
-                })
+            axios
+                .delete(`http://localhost:8000/api/orders/${id}/`)
+                .then(() => fetchData())
                 .catch(err => console.error(err));
         }
     };
 
     return (
         <>
-            <h2 style={{ textAlign: "center", fontSize: "25px", marginTop: "5px" }}>👋 Hello, Admin — Here’s Your Customer</h2>
+            <h2 style={{ textAlign: "center", fontSize: "25px", marginTop: "5px" }}>
+                👋 Hello, Admin — Here’s Your Customer
+            </h2>
             <hr />
 
             <div className="datacontainer">
                 {users.map((item, index) => (
-                    <div className="data" key={item.id || index}>
+                    <div className="data" key={item.id}>
                         <h5>Order #{index + 1}</h5>
                         <hr />
 
@@ -50,21 +52,36 @@ const Admin_page = () => {
                         <p><strong>Email:</strong> {item.shippingInfo?.email}</p>
                         <p><strong>Phone:</strong> {item.shippingInfo?.phone}</p>
                         <p><strong>Alternate:</strong> {item.shippingInfo?.alternate}</p>
-                        <p><strong>Address:</strong> {item.shippingInfo?.address}, {item.shippingInfo?.district}, {item.shippingInfo?.state}, {item.shippingInfo?.pincode}</p>
+                        <p>
+                            <strong>Address:</strong>{" "}
+                            {item.shippingInfo?.address},{" "}
+                            {item.shippingInfo?.district},{" "}
+                            {item.shippingInfo?.state},{" "}
+                            {item.shippingInfo?.pincode}
+                        </p>
                         <p><strong>Payment Mode:</strong> {item.shippingInfo?.payment}</p>
 
                         <hr />
 
-                        <p><strong>🕒 Order Date:</strong> {item.orderDate ? new Date(item.orderDate).toLocaleString() : 'N/A'}</p>
+                        <p>
+                            <strong>🕒 Order Date:</strong>{" "}
+                            {item.orderDate
+                                ? new Date(item.orderDate).toLocaleString()
+                                : "N/A"}
+                        </p>
 
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
-                            <button 
-                                style={{ padding: "5px 10px", background: "crimson", color: "#fff", border: "none", borderRadius: "4px" }} 
-                                onClick={() => handleDelete(item.id)}
-                            >
-                                🗑️ Delete
-                            </button>
-                        </div>
+                        <button
+                            style={{
+                                padding: "5px 10px",
+                                background: "crimson",
+                                color: "#fff",
+                                border: "none",
+                                borderRadius: "4px"
+                            }}
+                            onClick={() => handleDelete(item.id)}
+                        >
+                            🗑️ Delete
+                        </button>
                     </div>
                 ))}
             </div>
@@ -73,4 +90,3 @@ const Admin_page = () => {
 };
 
 export default Admin_page;
- 
