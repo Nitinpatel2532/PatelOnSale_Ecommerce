@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--f3tum%(lsy&6-ektafn)q(u93q8*0mw7n$c7=v8!rhm&dmb@u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 # ALLOWED_HOSTS = []
 
@@ -151,6 +151,12 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+# Django example
+# settings.py
+CORS_ALLOWED_ORIGINS = [
+    "patel-on-sale-ecommerce.vercel.app",
+]
+
 
 # deployment on render
 DEBUG = False

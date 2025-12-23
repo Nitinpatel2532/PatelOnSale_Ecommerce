@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const Admin_page = () => {
-    const [users, setUsers] = useState([]);
+  const [orders, setOrders] = useState([]);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+  const fetchOrders = async () => {
+    try {
+      const res = await axios.get(`${API_BASE_URL}/orders/all/`);
+      setOrders(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
+<<<<<<< HEAD
     const fetchData = () => {
         axios
             .get('http://localhost:8000/api/orders/')
@@ -36,17 +44,41 @@ const Admin_page = () => {
                     <div className="data" key={item.id}>
                         <h5>Order #{index + 1}</h5>
                         <hr />
+=======
+  useEffect(() => {
+    fetchOrders();
+  }, []);
 
-                        <h5>📦 Product Details</h5>
-                        <p><strong>Product:</strong> {item.buyNowItem?.type}</p>
-                        <p><strong>Price:</strong> ₹ {item.buyNowItem?.price}</p>
-                        <p><strong>Quantity:</strong> {item.buyNowItem?.quantity}</p>
-                        <p><strong>Size:</strong> {item.buyNowItem?.selectedSize}</p>
-                        <p><strong>Color:</strong> {item.buyNowItem?.selectedColor}</p>
-                        <p><strong>Total Price:</strong> ₹ {item.buyNowItem?.totalPrice}</p>
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this order?")) return;
 
-                        <hr />
+    try {
+      await axios.delete(`${API_BASE_URL}/orders/${id}/`);
+      fetchOrders();
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
+  return (
+    <>
+      <h2 style={{ textAlign: "center", marginTop: "10px" }}>
+        👋 Admin Dashboard
+      </h2>
+      <hr />
+>>>>>>> 0c2881b ( file changed)
+
+      <div className="datacontainer">
+        {orders.map((item, index) => (
+          <div className="data" key={item.id}>
+            <h4>Order #{index + 1}</h4>
+
+            <h5>📦 Product</h5>
+            <p>{item.buyNowItem?.type}</p>
+            <p>Qty: {item.buyNowItem?.quantity}</p>
+            <p>Total: ₹ {item.buyNowItem?.totalPrice}</p>
+
+<<<<<<< HEAD
                         <h5>📇 Shipping Info</h5>
                         <p><strong>Name:</strong> {item.shippingInfo?.name}</p>
                         <p><strong>Email:</strong> {item.shippingInfo?.email}</p>
@@ -60,9 +92,21 @@ const Admin_page = () => {
                             {item.shippingInfo?.pincode}
                         </p>
                         <p><strong>Payment Mode:</strong> {item.shippingInfo?.payment}</p>
+=======
+            <h5>📇 Shipping</h5>
+            <p>{item.shippingInfo?.name}</p>
+            <p>{item.shippingInfo?.phone}</p>
+            <p>{item.shippingInfo?.address}</p>
+>>>>>>> 0c2881b ( file changed)
 
-                        <hr />
+            <p>
+              🕒{" "}
+              {item.orderDate
+                ? new Date(item.orderDate).toLocaleString()
+                : "N/A"}
+            </p>
 
+<<<<<<< HEAD
                         <p>
                             <strong>🕒 Order Date:</strong>{" "}
                             {item.orderDate
@@ -87,6 +131,19 @@ const Admin_page = () => {
             </div>
         </>
     );
+=======
+            <button
+              style={{ background: "crimson", color: "#fff" }}
+              onClick={() => handleDelete(item.id)}
+            >
+              🗑 Delete
+            </button>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+>>>>>>> 0c2881b ( file changed)
 };
 
 export default Admin_page;
